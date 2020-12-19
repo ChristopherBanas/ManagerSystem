@@ -37,16 +37,18 @@ class CreateEmployee(Resource):
         :return: List containing employee information from database
         """
         parser = reqparse.RequestParser()
+        parser.add_argument('department', type=str)
         parser.add_argument('firstName', type=str)
         parser.add_argument('lastName', type=str)
         parser.add_argument('birthYear', type=int)
         parser.add_argument('phoneNumber', type=int)
         args = parser.parse_args()
+        department = args['department']
         firstName = args['firstName']
         lastName = args['lastName']
         birthYear = args['birthYear']
         phoneNumber = args['phoneNumber']
-        result = createEmployee(firstName, lastName, birthYear, phoneNumber)
+        result = createEmployee(department, firstName, lastName, birthYear, phoneNumber)
         return result
 
 

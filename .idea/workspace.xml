@@ -1,9 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="83d9e6d4-5b25-4060-8972-90c231ddd9e5" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/AddButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/serverClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/serverClasses.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/api/utilities.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/utilities.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/StarterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/StarterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/TableRow.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/TableRow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_api.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="JupyterTrust" id="af46effc-b564-4f81-bc34-2fe344ba94ee" />
+  <component name="ProjectId" id="1lnlBjRZXVTrWN4TXzB61YU3FpU" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.server">
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ManagerSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -26,10 +71,86 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest for test_api.TestDatabase" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="ManagerSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_api.TestDatabase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pytest for test_api.TestDatabase.test_00_addEmployee" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="ManagerSystem" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_api.TestDatabase.test_00_addEmployee&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.server" />
+        <item itemvalue="Python tests.pytest for test_api.TestDatabase" />
+        <item itemvalue="Python tests.pytest for test_api.TestDatabase.test_00_addEmployee" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="83d9e6d4-5b25-4060-8972-90c231ddd9e5" name="Default Changelist" comment="" />
+      <created>1608240603049</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608240603049</updated>
+      <workItem from="1608240604151" duration="229000" />
+      <workItem from="1608416068497" duration="2386000" />
+      <workItem from="1608420185248" duration="1956000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1398" height="129" key="GridCell.Tab.0.bottom" timestamp="1608422173272">
+      <screen x="0" y="25" width="1440" height="786" />
+    </state>
+    <state width="1398" height="129" key="GridCell.Tab.0.bottom/0.25.1440.786@0.25.1440.786" timestamp="1608422173272" />
+    <state width="1398" height="129" key="GridCell.Tab.0.center" timestamp="1608422173270">
+      <screen x="0" y="25" width="1440" height="786" />
+    </state>
+    <state width="1398" height="129" key="GridCell.Tab.0.center/0.25.1440.786@0.25.1440.786" timestamp="1608422173270" />
+    <state width="1398" height="129" key="GridCell.Tab.0.left" timestamp="1608422173270">
+      <screen x="0" y="25" width="1440" height="786" />
+    </state>
+    <state width="1398" height="129" key="GridCell.Tab.0.left/0.25.1440.786@0.25.1440.786" timestamp="1608422173270" />
+    <state width="1398" height="129" key="GridCell.Tab.0.right" timestamp="1608422173271">
+      <screen x="0" y="25" width="1440" height="786" />
+    </state>
+    <state width="1398" height="129" key="GridCell.Tab.0.right/0.25.1440.786@0.25.1440.786" timestamp="1608422173271" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase.coverage" NAME="pytest for test_api.TestDatabase Coverage Results" MODIFIED="1608417370535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase_test_00_addEmployee.coverage" NAME="pytest for test_api.TestDatabase.test_00_addEmployee Coverage Results" MODIFIED="1608417233160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/ManagerSystem$server.coverage" NAME="server Coverage Results" MODIFIED="1608422000689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
   </component>
 </project>

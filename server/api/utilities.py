@@ -15,7 +15,8 @@ def initialize():
     commit("""
         CREATE TABLE employees(
             id INTEGER PRIMARY KEY,
-            employeeCode INTEGER NOT NULL, 
+            employeeCode INTEGER NOT NULL,
+            department TEXT NOT NULL, 
             firstName TEXT NOT NULL, 
             lastName TEXT NOT NULL, 
             birthYear INTEGER NOT NULL, 
@@ -30,13 +31,14 @@ def getAllEmployees():
     :return: List of tuples containing employee information
     """
     result = getAll("SELECT * FROM employees")
-    result.sort(key=operator.itemgetter(3))  # sorts by last name (A-Z)
+    result.sort(key=operator.itemgetter(4))  # sorts by last name (A-Z)
     return result
 
 
-def createEmployee(firstName, lastName, birthYear, phoneNumber):
+def createEmployee(department, firstName, lastName, birthYear, phoneNumber):
     """
     Creates an employee given the parameters
+    :param department: Department that employee belongs to
     :param firstName: First name of employee
     :param lastName: Last name of employee
     :param birthYear: Birth year of employee
@@ -44,8 +46,8 @@ def createEmployee(firstName, lastName, birthYear, phoneNumber):
     :return: List containing the employees information from the database to verify it was added correctly
     """
     code = hashCode(firstName, lastName, birthYear, phoneNumber)
-    commit("INSERT INTO employees(employeeCode, firstName,lastName,birthYear,phoneNumber) VALUES (?,?,?,?,?)",
-           (code, firstName, lastName, birthYear, phoneNumber))
+    commit("""INSERT INTO employees(employeeCode, department, firstName, lastName, birthYear, phoneNumber) 
+            VALUES (?,?,?,?,?,?)""", (code, department, firstName, lastName, birthYear, phoneNumber))
     return getOne("SELECT * FROM employees WHERE employeeCode = ?", (code,))
 
 
