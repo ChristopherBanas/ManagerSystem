@@ -54,7 +54,7 @@ class AddButton extends React.Component{
     render() {
         return (
             <div>
-                <Button normal color="primary" onClick={()=>this.setState({showModal : true})}>Add Employee</Button>
+                <Button normal color="success" onClick={()=>this.setState({showModal : true})}>Add Employee</Button>
                 <Modal isOpen={this.state.showModal}>
                     <ModalHeader>
                         Add Employee
@@ -66,7 +66,7 @@ class AddButton extends React.Component{
                         <Input id="firstName" type='text' onChange={this.updateFirstName}/>
                         <Label for="birthYear">Birth Year</Label>
                         <Input id="birthYear" type='text' onChange={this.updateBirthYear}/>
-                        <Label for="phoneNumber">Phone Number</Label>
+                        <Label for="phoneNumber">Phone Number (numbers only)</Label>
                         <Input id="phoneNumber" type='text' onChange={this.updatePhoneNumber}/>
                         <FormGroup>
                             <Label for="department">Department</Label>

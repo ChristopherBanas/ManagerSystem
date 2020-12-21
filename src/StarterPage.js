@@ -107,6 +107,20 @@ class StarterPage extends React.Component {
         })
     }
 
+    deleteHandler = (props) =>{
+        var code = props[1];
+        var URL = '/deleteEmployee/'+code
+        fetch(URL,{
+            method : 'DELETE'
+        }).then(response => {
+            response.json()
+        }).then (jsonOutput => {
+             console.log("deleting")
+             console.log(jsonOutput)
+             this.fetchData();
+         })
+    }
+
     render() {
         console.log(this.state.employeeList)
         return(
@@ -120,6 +134,7 @@ class StarterPage extends React.Component {
                             <thead>
                                 <tr>
                                     <th className={"text-left text-md-left"}> </th>
+                                    <th className={"text-left text-md-left"}> </th>
                                     <th className={"text-left text-md-left"}>Last name</th>
                                     <th className={"text-left text-md-left"}>First name</th>
                                     <th className={"text-left text-md-left"}>Information</th>
@@ -130,7 +145,8 @@ class StarterPage extends React.Component {
                                 console.log("list loop")
                                 console.log(this.state.employeeList)
                                 console.log(list)
-                                return <TableRow infoList={list} callParent={this.editHandler}/>
+                                return <TableRow infoList={list} editParent={this.editHandler}
+                                                 deleteParent={this.deleteHandler}/>
                             })}
                             </tbody>
                         </Table>

@@ -93,8 +93,14 @@ class HashEmployee(Resource):
         result = hashCode(firstName, lastName, birthYear, phoneNumber)
         return result
 
+
 class UpdateEmployee(Resource):
     def put(self, employeeCode):
+        """
+        Rest put call to update an employee. Employee information sent via body call
+        :param employeeCode: Code of employee to be updated
+        :return: List containing employee information
+        """
         parser = reqparse.RequestParser()
         parser.add_argument('department', type=str)
         parser.add_argument('firstName', type=str)

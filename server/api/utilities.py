@@ -94,6 +94,16 @@ def hashCode(firstName, lastName, birthYear, phoneNumber):
 
 
 def updateEmployee(oldCode, department, firstName, lastName, birthYear, phoneNumber):
+    """
+    Updates employee given parameters
+    :param oldCode: Current hash code of employee to be updated
+    :param department: Department that employee belongs to
+    :param firstName: First name of employee
+    :param lastName: Last name of employee
+    :param birthYear: Birth year of employee
+    :param phoneNumber: Phone number of employee
+    :return: List containing the employees information from the database to verify it was updated correctly
+    """
     newCode = hashCode(firstName, lastName, birthYear, phoneNumber)
     commit("""UPDATE employees SET employeeCode=?, department=?, firstName=?, lastName=?, birthYear=?, phoneNumber=?
         WHERE employeeCode=?""", (newCode, department, firstName, lastName, birthYear, phoneNumber, oldCode))

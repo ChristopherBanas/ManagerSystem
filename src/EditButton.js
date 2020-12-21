@@ -62,7 +62,7 @@ class EditButton extends React.Component{
             originalDepartment : this.state.textDepartment,
 
         })
-        this.props.callParent(this.state);
+        this.props.editParent(this.state);
     }
 
     updateModal=()=>{
