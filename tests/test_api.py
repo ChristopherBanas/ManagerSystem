@@ -124,3 +124,26 @@ class TestDatabase(unittest.TestCase):
         self.assertEqual(None, result, "Nothing should have been returned")
 
         print(" > PASS: Employee data found")
+
+    def test_05_editEmployee(self):
+        print("Test: Editing employee")
+
+        data = dict(department="Delivery", firstName="chris", lastName="banas", birthYear=2000, phoneNumber=5701112222)
+        jdata = json.dumps(data)
+        hdr = {'content-type': 'application/json'}
+        result = post_rest_call(self, 'http://localhost:5000/createEmployee', jdata, hdr)
+        print(" > Return information:", result)
+        code = post_rest_call(self, 'http://localhost:5000/hashEmployee', jdata, hdr)
+
+        data = dict(department="Delivery", firstName="newChris", lastName="newBanas", birthYear=2005, phoneNumber=5701112222)
+        jdata = json.dumps(data)
+        hdr = {'content-type': 'application/json'}
+        result = put_rest_call(self, f'http://localhost:5000/updateEmployee/{code}', jdata, hdr)
+        print(" > Return information:", result)
+        self.assertNotEqual(code, result[1], "Code's match, employee not updated")
+
+        result = get_rest_call(self, 'http://localhost:5000/getAllEmployees')
+        print(" > Return information:", result)
+        self.assertNotEqual(code, result[0][1], "Code's match, employee not updated")
+
+        print(" > PASS: User edited")

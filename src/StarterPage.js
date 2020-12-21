@@ -26,9 +26,11 @@ class StarterPage extends React.Component {
     fetchData = () => {
          fetch('/getAllEmployees')
          .then(response => response.json())
-         .then (jsonOutput => {this.setState({
-             employeeList : jsonOutput
-         })})
+         .then (jsonOutput => {
+             this.setState({
+                employeeList : jsonOutput
+            })
+         })
     }
 
     componentDidMount(){
@@ -53,16 +55,60 @@ class StarterPage extends React.Component {
             return response.json()
         }).then(json =>{
             //update the courses with the updated DB information
-            console.log("json response")
-            console.log(json)
+            //console.log("json response")
+            //console.log(json)
             this.setState({
                 employeeList : this.state.employeeList.concat([json])
             })
             this.fetchData()
         })
     }
+    updateEmployee = (hashCode, props) =>{
+        const URL = '/updateEmployee/'+hashCode
+        fetch(URL,{
+            method : 'PUT',
+            body : JSON.stringify({
+                department : props.textDepartment,
+                firstName : props.textFirst,
+                lastName : props.textLast,
+                birthYear : props.textYear,
+                phoneNumber : props.textPhone
+            }),
+            headers:{
+                "Content-type":"application/json; charset=UTF-8"
+            }
+        }).then(response=>{
+            return response.json()
+        }).then(json =>{
+            //update the courses with the updated DB information
+            console.log("updating data")
+            this.fetchData()
+        })
+    }
+
+    editHandler = (props) =>{
+        const URL = '/hashEmployee'
+        fetch(URL,{
+            method : 'POST',
+            body : JSON.stringify({
+                firstName : props.originalFirst,
+                lastName : props.originalLast,
+                birthYear : props.originalYear,
+                phoneNumber : props.originalPhone
+            }),
+            headers:{
+                "Content-type":"application/json; charset=UTF-8"
+            }
+        }).then(response=>{
+            return response.json()
+        }).then(json =>{
+            //update the courses with the updated DB information
+            this.updateEmployee(json, props)
+        })
+    }
 
     render() {
+        console.log(this.state.employeeList)
         return(
             <div>
                 <Card className = "mb-4">
@@ -73,8 +119,7 @@ class StarterPage extends React.Component {
                         <Table striped>
                             <thead>
                                 <tr>
-                                    <th> </th>
-                                    <th className={"text-left text-md-left"}>Employee code</th>
+                                    <th className={"text-left text-md-left"}> </th>
                                     <th className={"text-left text-md-left"}>Last name</th>
                                     <th className={"text-left text-md-left"}>First name</th>
                                     <th className={"text-left text-md-left"}>Information</th>
@@ -85,7 +130,7 @@ class StarterPage extends React.Component {
                                 console.log("list loop")
                                 console.log(this.state.employeeList)
                                 console.log(list)
-                                return <TableRow infoList={list}/>
+                                return <TableRow infoList={list} callParent={this.editHandler}/>
                             })}
                             </tbody>
                         </Table>

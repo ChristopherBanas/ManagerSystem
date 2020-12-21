@@ -92,3 +92,20 @@ class HashEmployee(Resource):
         phoneNumber = args['phoneNumber']
         result = hashCode(firstName, lastName, birthYear, phoneNumber)
         return result
+
+class UpdateEmployee(Resource):
+    def put(self, employeeCode):
+        parser = reqparse.RequestParser()
+        parser.add_argument('department', type=str)
+        parser.add_argument('firstName', type=str)
+        parser.add_argument('lastName', type=str)
+        parser.add_argument('birthYear', type=int)
+        parser.add_argument('phoneNumber', type=int)
+        args = parser.parse_args()
+        department = args['department']
+        firstName = args['firstName']
+        lastName = args['lastName']
+        birthYear = args['birthYear']
+        phoneNumber = args['phoneNumber']
+        result = updateEmployee(employeeCode, department, firstName, lastName, birthYear, phoneNumber)
+        return result

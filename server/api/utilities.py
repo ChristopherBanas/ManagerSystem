@@ -6,6 +6,7 @@ Author: Christopher Banas
 from .dbTools import *
 import operator
 
+
 def initialize():
     """
     Drops the users table if exists, then creates user table
@@ -84,9 +85,16 @@ def hashCode(firstName, lastName, birthYear, phoneNumber):
     :return: employeeCode
     """
     firstCode = sum([ord(x) for x in firstName])  # sums up all ascii values of first name
-    lastCode = sum([ord(x) for x in lastName])   # sums up all ascii values of last name
+    lastCode = sum([ord(x) for x in lastName])  # sums up all ascii values of last name
     birthCode = birthYear - 1900
     phoneNumber = str(phoneNumber)
     phoneCode = int(phoneNumber[0:2]) + int(phoneNumber[3:6]) + int(phoneNumber[7:])
-    code = ((firstCode * 2) + (lastCode * 2) + (birthCode * 2) + (phoneCode * 5))*99
+    code = ((firstCode * 2) + (lastCode * 2) + (birthCode * 2) + (phoneCode * 5)) * 99
     return code
+
+
+def updateEmployee(oldCode, department, firstName, lastName, birthYear, phoneNumber):
+    newCode = hashCode(firstName, lastName, birthYear, phoneNumber)
+    commit("""UPDATE employees SET employeeCode=?, department=?, firstName=?, lastName=?, birthYear=?, phoneNumber=?
+        WHERE employeeCode=?""", (newCode, department, firstName, lastName, birthYear, phoneNumber, oldCode))
+    return getEmployee(newCode)

@@ -33,6 +33,7 @@ class AddButton extends React.Component{
     updateDepartment = (e) => {
         this.setState({textDepartment: e.target.value})
     }
+
     updateDatabase = () =>{
         this.setState({
             showModal : false,
