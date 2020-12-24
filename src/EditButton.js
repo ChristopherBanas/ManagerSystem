@@ -1,18 +1,10 @@
 import React from 'react';
-import {
-    Button,
-    Card,
-    CardBody,
-    CardHeader,
-    Input,
-    Label,
-    Modal,
-    ModalBody,
-    ModalFooter,
-    ModalHeader,
-    Table,
-    FormGroup, CardFooter
-} from "reactstrap";
+import {Button, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, FormGroup} from "reactstrap";
+
+function checkNum(value){
+    return /^\d+$/.test(value);
+}
+
 
 class EditButton extends React.Component{
     constructor(props) {
@@ -53,16 +45,26 @@ class EditButton extends React.Component{
     }
 
     updateDB = () =>{
-        this.setState({
-            showModal : false,
-            originalLast : this.state.textLast,
-            originalFirst : this.state.textFirst,
-            originalYear : this.state.textYear,
-            originalPhone : this.state.textPhone,
-            originalDepartment : this.state.textDepartment,
+        let validYear = checkNum(this.state.textYear);
+        let validPhone = checkNum(this.state.textPhone);
+        if(!validYear && !validPhone){
+            window.alert("ERROR: Invalid year and phone input. Input whole numbers only")
+        } else if(!validYear){
+            window.alert("ERROR: Invalid year input. Input whole numbers only")
+        } else if(!validPhone){
+            window.alert("ERROR: Invalid phone input. Input whole numbers only")
+        } else {
+            this.setState({
+                showModal: false,
+                originalLast: this.state.textLast,
+                originalFirst: this.state.textFirst,
+                originalYear: this.state.textYear,
+                originalPhone: this.state.textPhone,
+                originalDepartment: this.state.textDepartment,
 
-        })
-        this.props.editParent(this.state);
+            })
+            this.props.editParent(this.state);
+        }
     }
 
     updateModal=()=>{

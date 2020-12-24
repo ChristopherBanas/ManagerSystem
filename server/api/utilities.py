@@ -87,9 +87,12 @@ def hashCode(firstName, lastName, birthYear, phoneNumber):
     firstCode = sum([ord(x) for x in firstName])  # sums up all ascii values of first name
     lastCode = sum([ord(x) for x in lastName])  # sums up all ascii values of last name
     birthCode = birthYear - 1900
+    if birthCode < 0:  # impossible for someone to be alive but used for error checking
+        birthCode = 105  # generic number
     phoneNumber = str(phoneNumber)
-    phoneCode = int(phoneNumber[0:2]) + int(phoneNumber[3:6]) + int(phoneNumber[7:])
-    code = ((firstCode * 2) + (lastCode * 2) + (birthCode * 2) + (phoneCode * 5)) * 99
+    length = len(phoneNumber)
+    phoneCode = int(phoneNumber[0:length//2]) + int(phoneNumber[(length//2)+1:])
+    code = (firstCode + lastCode + (birthCode * 2) + (phoneCode * 5)) * 33
     return code
 
 

@@ -1,18 +1,5 @@
 import React from 'react';
-import {
-    Button,
-    Card,
-    CardBody,
-    CardHeader,
-    Input,
-    Label,
-    Modal,
-    ModalBody,
-    ModalFooter,
-    ModalHeader,
-    Table,
-    FormGroup, CardFooter
-} from "reactstrap";
+import {Button, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 class DeleteButton extends React.Component{
     constructor(props) {

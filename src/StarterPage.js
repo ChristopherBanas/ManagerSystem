@@ -1,20 +1,9 @@
 import React from 'react';
-import {
-    Button,
-    Card,
-    CardBody,
-    CardHeader,
-    Input,
-    Label,
-    Modal,
-    ModalBody,
-    ModalFooter,
-    ModalHeader,
-    Table,
-    FormGroup, CardFooter
-} from "reactstrap";
+import {Table, Navbar, NavbarBrand, Container, Col, Row, Alert} from "reactstrap";
 import TableRow from "./TableRow";
 import AddButton from "./AddButton";
+import './Table.css';
+
 class StarterPage extends React.Component {
     constructor(props) {
         super(props);
@@ -54,9 +43,6 @@ class StarterPage extends React.Component {
         }).then(response=>{
             return response.json()
         }).then(json =>{
-            //update the courses with the updated DB information
-            //console.log("json response")
-            //console.log(json)
             this.setState({
                 employeeList : this.state.employeeList.concat([json])
             })
@@ -115,46 +101,40 @@ class StarterPage extends React.Component {
         }).then(response => {
             response.json()
         }).then (jsonOutput => {
-             console.log("deleting")
-             console.log(jsonOutput)
              this.fetchData();
          })
     }
 
     render() {
-        console.log(this.state.employeeList)
         return(
             <div>
-                <Card className = "mb-4">
-                    <CardHeader as={"h5"} className = "text-center text-md-center">
-                        Employee List
-                    </CardHeader>
-                    <CardBody>
-                        <Table striped>
-                            <thead>
-                                <tr>
-                                    <th className={"text-left text-md-left"}> </th>
-                                    <th className={"text-left text-md-left"}> </th>
-                                    <th className={"text-left text-md-left"}>Last name</th>
-                                    <th className={"text-left text-md-left"}>First name</th>
-                                    <th className={"text-left text-md-left"}>Information</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                            {this.state.employeeList.map((list,i) =>{
-                                console.log("list loop")
-                                console.log(this.state.employeeList)
-                                console.log(list)
-                                return <TableRow infoList={list} editParent={this.editHandler}
-                                                 deleteParent={this.deleteHandler}/>
-                            })}
-                            </tbody>
-                        </Table>
-                    </CardBody>
-                    <CardFooter>
+                <Container className="themed-container" fluid="true">
+                    <Alert color="dark">
+                        <h1>Employee List</h1>
                         <AddButton callParent={this.addHandler}/>
-                    </CardFooter>
-                </Card>
+                    </Alert>
+                    <p></p>
+                </Container>
+                <div>
+                    <p></p>
+                </div>
+                <Table striped>
+                    <thead>
+                        <tr>
+                            <th>Last name</th>
+                            <th>First name</th>
+                            <th/>
+                            <th/>
+                            <th/>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.state.employeeList.map((list,i) =>{
+                            return <TableRow infoList={list} editParent={this.editHandler}
+                                             deleteParent={this.deleteHandler}/>
+                        })}
+                    </tbody>
+                </Table>
             </div>
         );
     }

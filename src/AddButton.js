@@ -1,5 +1,9 @@
 import React from 'react';
-import {Button, CardFooter, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {Button, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import './Button.css'
+function checkNum(value){
+    return /^\d+$/.test(value);
+}
 
 class AddButton extends React.Component{
     constructor(props) {
@@ -10,7 +14,7 @@ class AddButton extends React.Component{
             textFirst : "",
             textYear : "",
             textPhone : "",
-            textDepartment : "",
+            textDepartment : "Baker",  //in case department isn't selected
         }
     }
 
@@ -35,11 +39,24 @@ class AddButton extends React.Component{
     }
 
     updateDatabase = () =>{
-        this.setState({
-            showModal : false,
-        })
-        this.props.callParent(this.state);
+        let validYear = checkNum(this.state.textYear);
+        let validPhone = checkNum(this.state.textPhone);
+        if(!validYear && !validPhone){
+            window.alert("ERROR: Invalid year and phone input. Input whole numbers only")
+        } else if(!validYear){
+            window.alert("ERROR: Invalid year input. Input whole numbers only")
+        } else if(!validPhone){
+            window.alert("ERROR: Invalid phone input. Input whole numbers only")
+        } else if(this.state.textDepartment === ""){
+            window.alert("ERROR: No department selected")
+        } else{
+            this.setState({
+                showModal : false,
+            })
+            this.props.callParent(this.state);
+        }
     }
+
     updateModal=()=>{
         this.setState({
             showModal : false,
@@ -54,7 +71,9 @@ class AddButton extends React.Component{
     render() {
         return (
             <div>
-                <Button normal color="success" onClick={()=>this.setState({showModal : true})}>Add Employee</Button>
+                <Button normal color = "primary" onClick={()=>this.setState({showModal : true})}>
+                    Add Employee
+                </Button>
                 <Modal isOpen={this.state.showModal}>
                     <ModalHeader>
                         Add Employee
@@ -92,3 +111,4 @@ class AddButton extends React.Component{
 }
 
 export default AddButton;
+

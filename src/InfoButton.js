@@ -1,5 +1,5 @@
 import React from 'react';
-import {Button, FormGroup, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
+import {Button, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
 class InfoButton extends React.Component{
     constructor(props) {
@@ -38,7 +38,7 @@ class InfoButton extends React.Component{
                         <p id="infoDepartment">{department}</p>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={()=>this.setState({showModal : false})}>Ok</Button>
+                        <Button color="secondary" onClick={()=>this.setState({showModal : false})}>Ok</Button>
                     </ModalFooter>
                 </Modal>
             </div>
