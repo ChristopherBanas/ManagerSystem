@@ -19,6 +19,8 @@ class StarterPage extends React.Component {
              this.setState({
                 employeeList : jsonOutput
             })
+             console.log("JS page data")
+             console.log(this.state.employeeList)
          })
     }
 
@@ -106,18 +108,23 @@ class StarterPage extends React.Component {
     }
 
     render() {
+        if(this.state.employeeList.length === 0){
+            return(
+                <div>
+                    <Header addParent={this.addHandler}/>
+                    <p>
+                    </p>
+                    <div>
+                        <h5>
+                            No employees in system
+                        </h5>
+                    </div>
+                </div>
+            );
+        }
         return(
             <div>
-                <Container className="themed-container" fluid="true">
-                    <Alert color="dark">
-                        <h1>Employee List</h1>
-                        <AddButton callParent={this.addHandler}/>
-                    </Alert>
-                    <p></p>
-                </Container>
-                <div>
-                    <p></p>
-                </div>
+                <Header addParent={this.addHandler}/>
                 <Table striped>
                     <thead>
                         <tr>
@@ -139,6 +146,23 @@ class StarterPage extends React.Component {
         );
     }
 }
-
+export class Header extends React.Component{
+    render() {
+        return(
+            <div>
+                <Container className="themed-container" fluid="true">
+                    <Alert color="dark">
+                        <h1>Employee List</h1>
+                        <AddButton addParent={this.props.addParent}/>
+                    </Alert>
+                    <p></p>
+                </Container>
+                <div>
+                    <p></p>
+                </div>
+            </div>
+        );
+    }
+}
 export default StarterPage;
 

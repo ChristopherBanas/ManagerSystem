@@ -53,7 +53,7 @@ class AddButton extends React.Component{
             this.setState({
                 showModal : false,
             })
-            this.props.callParent(this.state);
+            this.props.addParent(this.state);
         }
     }
 

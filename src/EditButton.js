@@ -7,22 +7,21 @@ function checkNum(value){
 
 
 class EditButton extends React.Component{
-    constructor(props) {
-        super(props);
-        this.state = {
-            showModal : false,
-            textLast : props.infoList[4],
-            textFirst : props.infoList[3],
-            textYear : props.infoList[5],
-            textPhone : props.infoList[6],
-            textDepartment : props.infoList[2],
-            originalLast : props.infoList[4],
-            originalFirst : props.infoList[3],
-            originalYear : props.infoList[5],
-            originalPhone : props.infoList[6],
-            originalDepartment : props.infoList[2],
-        }
+    state = {
+        showModal : false,
+        textLast : this.props.infoList[4],
+        textFirst : this.props.infoList[3],
+        textYear : this.props.infoList[5],
+        textPhone : this.props.infoList[6],
+        textDepartment : this.props.infoList[2],
+        originalLast : this.props.infoList[4],
+        originalFirst : this.props.infoList[3],
+        originalYear : this.props.infoList[5],
+        originalPhone : this.props.infoList[6],
+        originalDepartment : this.props.infoList[2],
+        employeeCode : this.props.infoList[1]
     }
+
 
     updateLastName = (e) => {
         this.setState({textLast: e.target.value})
@@ -54,16 +53,15 @@ class EditButton extends React.Component{
         } else if(!validPhone){
             window.alert("ERROR: Invalid phone input. Input whole numbers only")
         } else {
-            this.setState({
-                showModal: false,
-                originalLast: this.state.textLast,
-                originalFirst: this.state.textFirst,
-                originalYear: this.state.textYear,
-                originalPhone: this.state.textPhone,
-                originalDepartment: this.state.textDepartment,
-
-            })
             this.props.editParent(this.state);
+            this.setState({
+                showModal : false,
+                originalLast : this.state.textLast,
+                originalFirst : this.state.textFirst,
+                originalYear : this.state.textYear,
+                originalPhone : this.state.textPhone,
+                textDepartment : this.state.textDepartment
+            })
         }
     }
 
@@ -77,8 +75,29 @@ class EditButton extends React.Component{
             textDepartment : this.state.originalDepartment
         })
     }
+    updateState=()=>{
+        this.setState({
+            textLast : this.props.infoList[4],
+            textFirst : this.props.infoList[3],
+            textYear : this.props.infoList[5],
+            textPhone : this.props.infoList[6],
+            textDepartment : this.props.infoList[2],
+            originalLast : this.props.infoList[4],
+            originalFirst : this.props.infoList[3],
+            originalYear : this.props.infoList[5],
+            originalPhone : this.props.infoList[6],
+            originalDepartment : this.props.infoList[2],
+            employeeCode : this.props.infoList[1]
+        });
+    }
 
     render() {
+        console.log("rendering")
+        console.log(this.state)
+        if(this.state.employeeCode !== this.props.infoList[1]){ //data needs to be updated
+            console.log("update")
+            this.updateState()
+        }
         return (
             <div>
                 <Button normal onClick={()=>this.setState({showModal : true})}>Edit</Button>

@@ -27,6 +27,7 @@ class GetAllEmployees(Resource):
         :return: List of tuples containing all the employee data
         """
         result = getAllEmployees()
+        print(result)
         return result
 
 
