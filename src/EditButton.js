@@ -1,12 +1,25 @@
+/**
+ * Desc: Allows user to edit an employee from the database
+ * Author: Christopher Banas
+ */
+
 import React from 'react';
 import {Button, Input, Label, Modal, ModalBody, ModalFooter, ModalHeader, FormGroup} from "reactstrap";
 
+/**
+ * Checks if a value is a number or not
+ * @param value Value to be checked
+ * @returns {boolean} If value is a number or not
+ */
 function checkNum(value){
     return /^\d+$/.test(value);
 }
 
-
+/**
+ * Contains all information needed to render edit button
+ */
 class EditButton extends React.Component{
+
     state = {
         showModal : false,
         textLast : this.props.infoList[4],
@@ -22,36 +35,58 @@ class EditButton extends React.Component{
         employeeCode : this.props.infoList[1]
     }
 
-
+    /**
+     * Updates text value of last name
+     * @param e Target of e is inputted text
+     */
     updateLastName = (e) => {
-        this.setState({textLast: e.target.value})
+        this.setState({textLast: e.target.value});
     }
 
+    /**
+     * Updates text value of first name
+     * @param e Target of e is inputted text
+     */
     updateFirstName = (e) => {
-        this.setState({textFirst: e.target.value})
+        this.setState({textFirst: e.target.value});
     }
 
+    /**
+     * Updates text value of birth year
+     * @param e Target of e is inputted text
+     */
     updateBirthYear = (e) => {
-        this.setState({textYear: e.target.value})
+        this.setState({textYear: e.target.value});
     }
 
+    /**
+     * Updates text value of phone number
+     * @param e Target of e is inputted text
+     */
     updatePhoneNumber = (e) => {
-        this.setState({textPhone: e.target.value})
+        this.setState({textPhone: e.target.value});
     }
 
+    /**
+     * Updates text value of department
+     * @param e Target of e is inputted text
+     */
     updateDepartment = (e) => {
-        this.setState({textDepartment: e.target.value})
+        this.setState({textDepartment: e.target.value});
     }
 
-    updateDB = () =>{
+    /**
+     * Error checks numbers, then updates database given call back function from parent
+     */
+    updateDatabase = () => {
         let validYear = checkNum(this.state.textYear);
         let validPhone = checkNum(this.state.textPhone);
         if(!validYear && !validPhone){
-            window.alert("ERROR: Invalid year and phone input. Input whole numbers only")
+            window.alert("ERROR: Invalid year and phone input. Input whole numbers only");
         } else if(!validYear){
-            window.alert("ERROR: Invalid year input. Input whole numbers only")
+            window.alert("ERROR: Invalid year input. Input whole numbers only");
         } else if(!validPhone){
-            window.alert("ERROR: Invalid phone input. Input whole numbers only")
+            window.alert("ERROR: Invalid phone input. Input whole numbers only");
         } else {
             this.props.editParent(this.state);
             this.setState({
@@ -65,7 +100,10 @@ class EditButton extends React.Component{
         }
     }
 
-    updateModal=()=>{
+    /**
+     * Updates modal back to default if user clicks cancel button
+     */
+    updateModal = () => {
         this.setState({
             showModal : false,
             textLast : this.state.originalLast,
@@ -75,7 +113,11 @@ class EditButton extends React.Component{
             textDepartment : this.state.originalDepartment
         })
     }
-    updateState=()=>{
+    /**
+     * Updates state if information is being jumbled. Used to prevent
+     * information from being swapped when table rearranges
+     */
+    updateState = () => {
         this.setState({
             textLast : this.props.infoList[4],
             textFirst : this.props.infoList[3],
@@ -91,11 +133,12 @@ class EditButton extends React.Component{
         });
     }
 
+    /**
+     * Renders the edit button
+     * @returns {JSX.Element} Usable edit button
+     */
     render() {
-        console.log("rendering")
-        console.log(this.state)
         if(this.state.employeeCode !== this.props.infoList[1]){ //data needs to be updated
-            console.log("update")
             this.updateState()
         }
         return (
@@ -128,7 +171,7 @@ class EditButton extends React.Component{
                         </FormGroup>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="primary" onClick={()=>this.updateDB()}>Ok</Button>
+                        <Button color="primary" onClick={()=>this.updateDatabase()}>Ok</Button>
                         <Button color="secondary" onClick={() => this.updateModal()}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
@@ -136,4 +179,5 @@ class EditButton extends React.Component{
         );
     }
 }
+
 export default EditButton;

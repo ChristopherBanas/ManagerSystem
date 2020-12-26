@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="83d9e6d4-5b25-4060-8972-90c231ddd9e5" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/api/serverClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/api/serverClasses.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AddButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/AddButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/EditButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/EditButton.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/StarterPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/StarterPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/DeleteButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/DeleteButton.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,7 +167,7 @@
       <workItem from="1608751594022" duration="5218000" />
       <workItem from="1608757280956" duration="913000" />
       <workItem from="1608844282441" duration="4047000" />
-      <workItem from="1609013651702" duration="3674000" />
+      <workItem from="1609013651702" duration="4843000" />
     </task>
     <servers />
   </component>
