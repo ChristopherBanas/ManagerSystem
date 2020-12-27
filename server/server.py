@@ -4,7 +4,7 @@ Author: Christopher Banas
 """
 
 from flask import Flask
-from flask_restful import Resource, Api
+from flask_restful import Api
 
 from api.serverClasses import *
 from api.utilities import *

@@ -58,7 +58,7 @@ def deleteEmployee(employeeCode):
     :param employeeCode: employeeCode of employee to be deleted
     :return: "Employee not found" is no employee with given code, otherwise None is returned
     """
-    if getEmployee(employeeCode) is None:  # check if the employeeID is valid
+    if getEmployee(employeeCode) is None:  # check if the employeeCode is valid
         return "Employee not found"
     commit("DELETE FROM employees WHERE employeeCode = ?", (employeeCode,))
     result = getOne("SELECT * FROM employees WHERE employeeCode= ?", (employeeCode,))

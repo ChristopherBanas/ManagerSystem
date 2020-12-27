@@ -4,10 +4,7 @@ Author: Christopher Banas
 """
 
 from flask_restful import Resource
-from flask_restful import request
 from flask_restful import reqparse
-import json
-
 from .utilities import *
 
 
@@ -27,7 +24,6 @@ class GetAllEmployees(Resource):
         :return: List of tuples containing all the employee data
         """
         result = getAllEmployees()
-        print(result)
         return result
 
 
