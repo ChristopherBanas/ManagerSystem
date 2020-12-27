@@ -8,9 +8,10 @@ from flask_restful import Resource, Api
 
 from api.serverClasses import *
 from api.utilities import *
-app = Flask(__name__) #create Flask instance
 
-api = Api(app) #api router
+app = Flask(__name__)  # create Flask instance
+
+api = Api(app)  # api router
 
 api.add_resource(CreateDatabase, '/initialize')
 api.add_resource(GetAllEmployees, '/getAllEmployees')

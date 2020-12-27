@@ -1,10 +1,23 @@
+/**
+ * Desc: Contains all components needed to render web page
+ * Author: Christopher Banas
+ */
+
 import React from 'react';
-import {Table, Navbar, NavbarBrand, Container, Col, Row, Alert} from "reactstrap";
+import {Table, Container, Alert} from "reactstrap";
 import TableRow from "./TableRow";
 import AddButton from "./AddButton";
 import './Table.css';
 
+/**
+ * Contains all information needed to render starter page
+ */
 class StarterPage extends React.Component {
+
+    /**
+     * Constructs the add button's state with given props
+     * @param props
+     */
     constructor(props) {
         super(props);
         this.state={
@@ -12,22 +25,31 @@ class StarterPage extends React.Component {
             addModal : false
         }
     }
+
+    /**
+     * Calls server URL to get all employee information
+     */
     fetchData = () => {
          fetch('/getAllEmployees')
          .then(response => response.json())
          .then (jsonOutput => {
              this.setState({
                 employeeList : jsonOutput
-            })
-             console.log("JS page data")
-             console.log(this.state.employeeList)
+            });
          })
     }
 
+    /**
+     * Initializes starter page to fill in initial data
+     */
     componentDidMount(){
         this.fetchData();
     }
 
+    /**
+     * Call parent for AddButton to call server to add an employee
+     * @param props Information of employee to be added
+     */
     addHandler = (props) => {
         const URL = '/createEmployee'
         fetch(URL,{
@@ -42,16 +64,22 @@ class StarterPage extends React.Component {
             headers:{
                 "Content-type":"application/json; charset=UTF-8"
             }
-        }).then(response=>{
-            return response.json()
-        }).then(json =>{
+        }).then(response => {
+            return response.json();
+        }).then(json => {
             this.setState({
                 employeeList : this.state.employeeList.concat([json])
-            })
-            this.fetchData()
-        })
+            });
+            this.fetchData();
+        });
     }
-    updateEmployee = (hashCode, props) =>{
+
+    /**
+     * Updates employee in database with the given employee information
+     * @param hashCode Code of employee to be edited
+     * @param props Information of edited employee
+     */
+    updateEmployee = (hashCode, props) => {
         const URL = '/updateEmployee/'+hashCode
         fetch(URL,{
             method : 'PUT',
@@ -65,16 +93,19 @@ class StarterPage extends React.Component {
             headers:{
                 "Content-type":"application/json; charset=UTF-8"
             }
-        }).then(response=>{
-            return response.json()
-        }).then(json =>{
+        }).then(response => {
+            return response.json();
+        }).then(json => {
             //update the courses with the updated DB information
-            console.log("updating data")
-            this.fetchData()
-        })
+            this.fetchData();
+        });
     }
 
-    editHandler = (props) =>{
+    /**
+     * Call parent for EditButton to call server to edit an employee
+     * @param props Information of employee to be edited
+     */
+    editHandler = (props) => {
         const URL = '/hashEmployee'
         fetch(URL,{
             method : 'POST',
@@ -87,33 +118,40 @@ class StarterPage extends React.Component {
             headers:{
                 "Content-type":"application/json; charset=UTF-8"
             }
-        }).then(response=>{
-            return response.json()
-        }).then(json =>{
-            //update the courses with the updated DB information
-            this.updateEmployee(json, props)
-        })
+        }).then(response => {
+            return response.json();
+        }).then(json => {
+            //edit employee with the hashcode and employee information
+            this.updateEmployee(json, props);
+        });
     }
 
-    deleteHandler = (props) =>{
-        var code = props[1];
-        var URL = '/deleteEmployee/'+code
+    /**
+     * Call parent for DeleteButton to call server to delete an employee
+     * @param props Information of employee to be deleted
+     */
+    deleteHandler = (props) => {
+        let code = props[1];  //employeeCode
+        let URL = '/deleteEmployee/'+code
         fetch(URL,{
             method : 'DELETE'
         }).then(response => {
-            response.json()
+            response.json();
         }).then (jsonOutput => {
              this.fetchData();
-         })
+        });
     }
 
+    /**
+     * Renders the starter page
+     * @returns {JSX.Element} Interactive starter page
+     */
     render() {
-        if(this.state.employeeList.length === 0){
+        if(this.state.employeeList.length === 0){  //if no employees are in the database
             return(
                 <div>
                     <Header addParent={this.addHandler}/>
-                    <p>
-                    </p>
+                    <p></p>
                     <div>
                         <h5>
                             No employees in system
@@ -136,7 +174,7 @@ class StarterPage extends React.Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.state.employeeList.map((list,i) =>{
+                        {this.state.employeeList.map((list,i) => {
                             return <TableRow infoList={list} editParent={this.editHandler}
                                              deleteParent={this.deleteHandler}/>
                         })}
@@ -146,7 +184,16 @@ class StarterPage extends React.Component {
         );
     }
 }
+
+/**
+ * Contains all information needed to render starter page's header
+ */
 export class Header extends React.Component{
+
+    /**
+     * Renders the starter page's header
+     * @returns {JSX.Element} Interactive starter page's header
+     */
     render() {
         return(
             <div>
@@ -164,5 +211,6 @@ export class Header extends React.Component{
         );
     }
 }
+
 export default StarterPage;
 

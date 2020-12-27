@@ -1,7 +1,20 @@
+/**
+ * Desc: Allows user to add a see employee information in the database
+ * Author: Christopher Banas
+ */
+
 import React from 'react';
 import {Button, Label, Modal, ModalBody, ModalFooter, ModalHeader} from "reactstrap";
 
+/**
+ * Contains all information needed to render information button
+ */
 class InfoButton extends React.Component{
+
+    /**
+     * Constructs the information button's state with given props
+     * @param props
+     */
     constructor(props) {
         super(props);
         this.state = {
@@ -9,13 +22,17 @@ class InfoButton extends React.Component{
         }
     }
 
+    /**
+     * Renders the information button
+     * @returns {JSX.Element} Usable information button
+     */
     render() {
-        var code = this.props.infoList[1];
-        var department = this.props.infoList[2];
-        var lastName = this.props.infoList[4];
-        var firstName = this.props.infoList[3];
-        var year = this.props.infoList[5];
-        var phone = this.props.infoList[6];
+        let code = this.props.infoList[1];
+        let department = this.props.infoList[2];
+        let firstName = this.props.infoList[3];
+        let lastName = this.props.infoList[4];
+        let year = this.props.infoList[5];
+        let phone = this.props.infoList[6];
         return (
             <div>
                 <Button normal onClick={()=>this.setState({showModal : true})}>Info</Button>

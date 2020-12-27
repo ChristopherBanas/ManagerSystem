@@ -113,6 +113,7 @@ class EditButton extends React.Component{
             textDepartment : this.state.originalDepartment
         })
     }
+
     /**
      * Updates state if information is being jumbled. Used to prevent
      * information from being swapped when table rearranges
