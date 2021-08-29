@@ -6,8 +6,17 @@ When the server and website are running, the user interacts with the website to 
 information on a local database. The server and website interact with each other to
 display the database's information in an easy to view format.
 
+## Images
+Inputting data
+![image](images/dataInput.png)
+
+Outputted data
+![image](images/output.png)
+
+
 ## System Requirements / Installation
 - Python installed on system
+- Flask & flask_restful installed on python version
 - Node.js installed on system
 - Empty localhost:3000 (website) and localhost:5000 (server)
 
@@ -32,4 +41,4 @@ display the database's information in an easy to view format.
 ## Authors and Acknowledgment
 
 Some code based off of files provided to students at the Rochester Institute of Technology
-for Web Engineering (SWEN-244)
+for Web Engineering (SWEN-344)

@@ -4,7 +4,6 @@
     <list default="true" id="83d9e6d4-5b25-4060-8972-90c231ddd9e5" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/server/database.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -41,6 +40,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -61,6 +61,17 @@
     </key>
   </component>
   <component name="RunManager" selected="Python.server">
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="server" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="ManagerSystem" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -184,7 +195,23 @@
       <workItem from="1609013651702" duration="5567000" />
       <workItem from="1609102136109" duration="2270000" />
       <workItem from="1609104838777" duration="1780000" />
-      <workItem from="1609191153225" duration="872000" />
+      <workItem from="1609191153225" duration="1518000" />
+      <workItem from="1609280552434" duration="298000" />
+      <workItem from="1610344234989" duration="126000" />
+      <workItem from="1610570329909" duration="8000" />
+      <workItem from="1610919061485" duration="821000" />
+      <workItem from="1611349200606" duration="31000" />
+      <workItem from="1611349470269" duration="198000" />
+      <workItem from="1612552638812" duration="27000" />
+      <workItem from="1613931397310" duration="123000" />
+      <workItem from="1614710506931" duration="38000" />
+      <workItem from="1616038882304" duration="131000" />
+      <workItem from="1622655079271" duration="1371000" />
+      <workItem from="1622832886034" duration="599000" />
+      <workItem from="1623085386039" duration="94000" />
+      <workItem from="1623419799920" duration="124000" />
+      <workItem from="1623421018706" duration="148000" />
+      <workItem from="1624144536158" duration="216000" />
     </task>
     <servers />
   </component>
@@ -192,53 +219,36 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="320" y="80" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608492405140">
-      <screen x="0" y="25" width="1440" height="786" />
+    <state x="170" y="247" width="927" height="341" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1622655153011">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state x="320" y="80" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1440.786@0.25.1440.786" timestamp="1608492405140" />
-    <state x="170" y="247" width="927" height="341" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog" timestamp="1609105388233">
-      <screen x="0" y="25" width="1440" height="785" />
+    <state x="170" y="247" width="927" height="341" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.25.1440.784@0.25.1440.784" timestamp="1622655153011" />
+    <state width="1383" height="145" key="GridCell.Tab.0.bottom" timestamp="1614710544254">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state x="170" y="247" width="927" height="341" key="#com.intellij.structuralsearch.plugin.ui.StructuralSearchDialog/0.25.1440.785@0.25.1440.785" timestamp="1609105388233" />
-    <state width="1195" height="346" key="GridCell.Tab.0.bottom" timestamp="1609124735643">
-      <screen x="0" y="25" width="1440" height="785" />
+    <state width="1383" height="145" key="GridCell.Tab.0.bottom/0.25.1440.784/1440.-31.1920.1055@0.25.1440.784" timestamp="1614710544254" />
+    <state width="1383" height="145" key="GridCell.Tab.0.center" timestamp="1614710544253">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state width="1195" height="346" key="GridCell.Tab.0.bottom/0.25.1440.785@0.25.1440.785" timestamp="1609124735643" />
-    <state width="1398" height="2" key="GridCell.Tab.0.bottom/0.25.1440.786@0.25.1440.786" timestamp="1608584750748" />
-    <state width="1195" height="346" key="GridCell.Tab.0.center" timestamp="1609124735642">
-      <screen x="0" y="25" width="1440" height="785" />
+    <state width="1383" height="145" key="GridCell.Tab.0.center/0.25.1440.784/1440.-31.1920.1055@0.25.1440.784" timestamp="1614710544253" />
+    <state width="1383" height="145" key="GridCell.Tab.0.left" timestamp="1614710544252">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state width="1195" height="346" key="GridCell.Tab.0.center/0.25.1440.785@0.25.1440.785" timestamp="1609124735642" />
-    <state width="1398" height="2" key="GridCell.Tab.0.center/0.25.1440.786@0.25.1440.786" timestamp="1608584750746" />
-    <state width="1195" height="346" key="GridCell.Tab.0.left" timestamp="1609124735642">
-      <screen x="0" y="25" width="1440" height="785" />
+    <state width="1383" height="145" key="GridCell.Tab.0.left/0.25.1440.784/1440.-31.1920.1055@0.25.1440.784" timestamp="1614710544252" />
+    <state width="1383" height="145" key="GridCell.Tab.0.right" timestamp="1614710544254">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state width="1195" height="346" key="GridCell.Tab.0.left/0.25.1440.785@0.25.1440.785" timestamp="1609124735642" />
-    <state width="1398" height="2" key="GridCell.Tab.0.left/0.25.1440.786@0.25.1440.786" timestamp="1608584750746" />
-    <state width="1195" height="346" key="GridCell.Tab.0.right" timestamp="1609124735643">
-      <screen x="0" y="25" width="1440" height="785" />
+    <state width="1383" height="145" key="GridCell.Tab.0.right/0.25.1440.784/1440.-31.1920.1055@0.25.1440.784" timestamp="1614710544254" />
+    <state x="439" y="133" width="670" height="676" key="search.everywhere.popup" timestamp="1622655162243">
+      <screen x="0" y="25" width="1440" height="784" />
     </state>
-    <state width="1195" height="346" key="GridCell.Tab.0.right/0.25.1440.785@0.25.1440.785" timestamp="1609124735643" />
-    <state width="1398" height="2" key="GridCell.Tab.0.right/0.25.1440.786@0.25.1440.786" timestamp="1608584750747" />
-    <state width="229" height="457" key="HiddenNamespacesPopup" timestamp="1609015294639">
-      <screen x="0" y="25" width="1440" height="785" />
-    </state>
-    <state width="229" height="457" key="HiddenNamespacesPopup/0.25.1440.785@0.25.1440.785" timestamp="1609015294639" />
-    <state width="229" height="457" key="HiddenNamespacesPopup/0.25.1440.786@0.25.1440.786" timestamp="1608492389847" />
-    <state width="254" height="200" key="ShowFilterAction_Filter_Popup" timestamp="1609105434263">
-      <screen x="0" y="25" width="1440" height="785" />
-    </state>
-    <state width="254" height="200" key="ShowFilterAction_Filter_Popup/0.25.1440.785@0.25.1440.785" timestamp="1609105434263" />
-    <state x="298" y="134" width="670" height="676" key="search.everywhere.popup" timestamp="1609105434261">
-      <screen x="0" y="25" width="1440" height="785" />
-    </state>
-    <state x="298" y="134" width="670" height="676" key="search.everywhere.popup/0.25.1440.785@0.25.1440.785" timestamp="1609105434261" />
+    <state x="439" y="133" width="670" height="676" key="search.everywhere.popup/0.25.1440.784@0.25.1440.784" timestamp="1622655162243" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase_test_05_editEmployee.coverage" NAME="pytest for test_api.TestDatabase.test_05_editEmployee Coverage Results" MODIFIED="1608498696229" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase.coverage" NAME="pytest for test_api.TestDatabase Coverage Results" MODIFIED="1608752102826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase_test_00_addEmployee.coverage" NAME="pytest for test_api.TestDatabase.test_00_addEmployee Coverage Results" MODIFIED="1608417233160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/ManagerSystem$pytest_for_test_api_TestDatabase_test_01_hashEmployee.coverage" NAME="pytest for test_api.TestDatabase.test_01_hashEmployee Coverage Results" MODIFIED="1608752086895" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/ManagerSystem$server.coverage" NAME="server Coverage Results" MODIFIED="1609105535160" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
+    <SUITE FILE_PATH="coverage/ManagerSystem$server.coverage" NAME="server Coverage Results" MODIFIED="1614710511356" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/server" />
   </component>
 </project>
